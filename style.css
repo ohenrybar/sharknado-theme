@@ -759,6 +759,7 @@ object {
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
 }
+<<<<<<< HEAD
 .gallery-caption {}
 
 /*--------------------------------------------------------------
@@ -895,3 +896,6 @@ img {
 
 }
  
+=======
+.gallery-caption {}
+>>>>>>> FETCH_HEAD

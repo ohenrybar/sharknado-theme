@@ -12,6 +12,7 @@
  */
 /*loads up header file*/
 get_header(); ?>
+<?php get_sidebar(); ?>
 
 <!--gets the sidebar-->
 <?php get_sidebar(); ?>
@@ -19,13 +20,21 @@ get_header(); ?>
 	<!--opens divs for main content-->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+<<<<<<< HEAD
 		<!--loads up the function of the slider plugin-->
+=======
+
+>>>>>>> FETCH_HEAD
 		<?php
 			if( function_exists('FA_display_slider') ){
 				FA_display_slider(30);
 			}
 		?>
+<<<<<<< HEAD
 		<!--if there are posts...-->
+=======
+		
+>>>>>>> FETCH_HEAD
 		<?php if ( have_posts() ) : ?>
 			<!--display posts, if there are posts-->
 			<?php /* Start the Loop */ ?>
@@ -51,5 +60,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+<<<<<<< HEAD
 <!--gets the footer file -->
+=======
+>>>>>>> FETCH_HEAD
 <?php get_footer(); ?>
