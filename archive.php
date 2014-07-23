@@ -6,17 +6,17 @@
  *
  * @package sharknado theme
  */
-
+// this is calling the header function
 get_header(); ?>
-
+	<!--these are defining the divs and id-->
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		 <!--this is an if statement that checks if there are any posts--> 
 		<?php if ( have_posts() ) : ?>
-
+		<!--this defines the header and what will show for the h1-->
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php
+					<?php /*showing that if what is wanted is appropriate, it will print, as well as a function is being called*/
 						if ( is_category() ) :
 							single_cat_title();
 

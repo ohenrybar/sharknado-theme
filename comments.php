@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 
 <div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
+	<?php // an if statement is present that is calling a function, as well as printing the required information  ?>
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">

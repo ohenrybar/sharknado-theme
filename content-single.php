@@ -3,18 +3,23 @@
  * @package sharknado theme
  */
 ?>
-
+<!--gets an article id from the post number in database -->
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<!--fetches the entry title -->
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
+		<!--fetches posted on date meta -->
 		<div class="entry-meta">
 			<?php sharknado_theme_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
+	<!--div that presents the content -->
 	<div class="entry-content">
 		<?php the_content(); ?>
+		
+		<!--array of posts before and after the current one -->
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'sharknado-theme' ),
@@ -49,6 +54,7 @@
 
 			} // end check for categories on this blog
 
+			/*prints out meta tags, the category the post belongs to, list of tags, and proveds another link to the article*/
 			printf(
 				$meta_text,
 				$category_list,
@@ -57,6 +63,7 @@
 			);
 		?>
 
+		<!--link to edit the post -->
 		<?php edit_post_link( __( 'Edit', 'sharknado-theme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

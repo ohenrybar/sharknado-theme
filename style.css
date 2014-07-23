@@ -44,6 +44,7 @@ and Blueprint http://www.blueprintcss.org/
 12.0 - Media
 	12.1 - Captions
 	12.2 - Galleries
+13.0 - Responsive Web Design
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -58,7 +59,6 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
-	font-family: inherit;
 	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
@@ -82,6 +82,7 @@ html {
 }
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 article,
 aside,
@@ -230,7 +231,7 @@ dd {
 }
 img {
 	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	max-width: 13%; /* Adhere to container width. */
 }
 figure {
 	margin: 0;
@@ -241,6 +242,47 @@ table {
 }
 th {
 	font-weight: bold;
+}
+
+.site-branding {
+	font-size: 2.5em;
+}
+
+.site-header {
+	background-color: darkgray;
+	height:10.5em;
+	background-image: url("https://phoenix.sheridanc.on.ca/~ccit1810/wp-content/uploads/2014/07/SharknadoHeader.png");
+	background-repeat: no-repeat;
+}
+
+.taxonomy-description {
+	display:none;
+}
+
+.page-title {
+	font-size: 2.5em;
+	margin-left: 1em;
+	color: white;
+}
+
+.entry-title {
+	font-size: 1.5em;
+}
+
+.entry-footer {
+	font-size: .7em;
+}
+
+.page-header {
+	margin-bottom: 2em;
+}
+
+.entry-meta {
+	font-size: .7em;
+}
+
+.site-info {
+	color: #FFCC00
 }
 
 /*--------------------------------------------------------------
@@ -347,15 +389,15 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #9933CC;
 }
 a:visited {
-	color: purple;
+	color: #FFCC00;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #76358E;
 }
 
 /*--------------------------------------------------------------
@@ -366,6 +408,11 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: black;
+	padding-top: 1px;
+	height: 41px;
 }
 .main-navigation ul {
 	list-style: none;
@@ -379,35 +426,44 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	margin: .4em 4.5em 0em 4.5em;
 }
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
-	top: 1.5em;
+	top: 2em;
 	left: -999em;
 	z-index: 99999;
+	background-color: transparent;
 }
 .main-navigation ul ul ul {
 	left: -999em;
 	top: 0;
 }
-.main-navigation ul ul a {
-	width: 200px;
+.main-navigation ul ul li a {
+	width: 120px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 10px 15px 10px 15px;
+	border-top: 3px solid #FFCC00;
+	border-bottom: 3px solid #FFCC00;
+	text-align: center;
 }
 .main-navigation ul ul li {
 }
 .main-navigation li:hover > a {
 }
 .main-navigation ul ul :hover > a {
+
 }
 .main-navigation ul ul a:hover {
+
 }
 .main-navigation ul li:hover > ul {
-	left: auto;
+	left:1em;
 }
 .main-navigation ul ul li:hover > ul {
-	left: 100%;
+	left:100%;
 }
 .main-navigation .current_page_item a,
 .main-navigation .current-menu-item a {
@@ -416,16 +472,9 @@ a:active {
 .menu-toggle {
 	display: none;
 }
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
 
-	.main-navigation ul {
-		display: none;
-	}
-}
+	
+
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -444,6 +493,15 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+.header-search {
+	display:block; 
+	float:right; 
+}
+		
+.search-submit {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -543,16 +601,28 @@ a:active {
 	display: none;
 }
 
+.widget-area {
+	float: right;
+	margin-right: 1.5em;
+}
+
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 }
 .hentry {
-	margin: 0 0 1.5em;
+	border: .2em;
+	margin: 2em;
+	border-radius: 1em;
+	padding: 2em;
+	background: white;
+	margin-bottom: 4em;
+	box-shadow: 5px 5px 50px black;
 }
 .byline,
 .updated {
@@ -572,6 +642,14 @@ a:active {
 	margin: 0 0 1.5em;
 }
 
+#post-140 {
+	margin:0em;
+	border-style:none;
+	border-radius:0em;
+	border: 0em;
+	background: none;
+}
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -587,6 +665,9 @@ a:active {
 	word-wrap: break-word;
 }
 .bypostauthor {
+}
+.comments-area {
+	color: white;
 }
 
 /*--------------------------------------------------------------
@@ -626,13 +707,17 @@ object {
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
+	float: left;
+	
 }
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 0 auto;
+	max-width: 11em;
 }
 .wp-caption-text {
 	text-align: center;
+	font-size: .7em;
 }
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
@@ -675,3 +760,138 @@ object {
 	max-width: 11.11%;
 }
 .gallery-caption {}
+
+/*--------------------------------------------------------------
+13.0 Responsive Web Design
+--------------------------------------------------------------*/
+/*15 inches 1366 x 768*/
+@media screen and (min-width:1280px) {
+img {
+	height: auto;
+	max-width: 12%%;
+	}
+.site-header {
+	background-size: 100%;
+	}
+}
+
+/*macbook pro 13 inches 13.3 inches 1280 x 800*/
+@media screen and (max-width:1281px) {
+img {
+ 	height: auto;
+ 	max-width: 13%;
+	}
+.site-header {
+	background-size: 100%;
+	}
+}
+
+/*Samsung Galaxy S4, 360 x 640*/
+@media screen and(min-width:321px) and (max-width: 361px){
+.site-navigation .main-navigation {
+	float: left;
+	overflow: auto;
+	}
+
+img {
+	height: auto;
+	max-width: 18%;
+	position: relative;
+	top: -4px;
+	right: 6px;
+	}
+.header-search {
+	display: block;
+	float: left;
+	margin-top: 14px;
+	}
+.main-navigation a {
+	display: inline;
+	text-decoration: none;
+	margin: 0.4em 8.5em 0em 1em;
+	}
+.main-navigation {
+	height: 34px;
+	}
+
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+}
+
+/*Iphone 5  - 320 x 568*/
+@media screen and (max-width: 320px ) {
+	.site-navigation .main-navigation {
+	float: left;
+	overflow: auto;
+	}
+
+.entry-content{
+	position: relative;
+	top: -5px;
+	left: -12PX;
+	right: 33px;
+	width: 111%;
+	}
+img {
+	height: auto;
+	max-width: 18%;
+	position: relative;
+	top: -4px;
+	right: 6px;
+
+	}
+.header-search {
+	display: block;
+	float: left;
+	margin-top: 14px;
+	position: relative;
+	z-index: 999999;
+	}
+.main-navigation a {
+	display: inline;
+	text-decoration: none;
+	margin: 0.4em 8.5em 0em 1em;
+	}
+.main-navigation {
+	height: 34px;
+	position: relative;
+	top: -17px;
+
+	}
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+		position: relative;
+		z-index: 9999999;
+		font-size: 85%;
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+	.site-header {
+		height: 46px;
+	}
+	.page-title {
+		font-size: 2em;
+		margin-left: 1em;
+		position: relative;
+		top: 1em;
+	}
+	.content-area {
+		position: relative;
+		top: 3em;			
+		font-size: 50%;
+	}
+	#post-146 {
+		font-size: 8px;
+	}
+
+}
+ 

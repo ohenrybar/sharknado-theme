@@ -10,17 +10,27 @@
  *
  * @package sharknado theme
  */
-
+/*loads up header file*/
 get_header(); ?>
 
+<!--gets the sidebar-->
+<?php get_sidebar(); ?>
+
+	<!--opens divs for main content-->
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+		<!--loads up the function of the slider plugin-->
+		<?php
+			if( function_exists('FA_display_slider') ){
+				FA_display_slider(30);
+			}
+		?>
+		<!--if there are posts...-->
 		<?php if ( have_posts() ) : ?>
-
+			<!--display posts, if there are posts-->
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				<!--loads page layout or template for displaying posts-->
 				<?php
 					/* Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
@@ -30,17 +40,16 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-
+			<!--loads the pages lower navigation options-->
 			<?php sharknado_theme_paging_nav(); ?>
 
 		<?php else : ?>
-
+			<!--pulls up template and page for if there is no content-->
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<!--gets the footer file -->
 <?php get_footer(); ?>
